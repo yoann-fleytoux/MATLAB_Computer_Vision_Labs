@@ -1,0 +1,38 @@
+monocular visual odometry system:
+In robotics and computer vision, visual odometry is the process of determining the position and orientation of a robot by analyzing the associated camera images
+
+the Pose:
+In computer vision and in robotics, a typical task is to identify specific objects in an image and to determine each object's position and orientation relative to some coordinate system. The combination of position and orientation is referred to as the pose of an object
+
+the ground truth camera poses:
+Ground truth is a term used in various fields to refer to information provided by direct observation as opposed to information provided by inference.
+
+Computer stereo vision:
+is the extraction of 3D information from digital images, such as obtained by a CCD camera. By comparing information about a scene from two vantage points, 3D information can be extracted by examination of the relative positions of objects in the two panels. This is similar to the biological process Stereopsis.
+
+epipolar constraint:
+Epipolar geometry is the geometry of stereo vision. When two cameras view a 3D scene from two distinct positions, there are a number of geometric relations between the 3D points and their projections onto the 2D images that lead to constraints between the image points. These relations are derived based on the assumption that the cameras can be approximated by the pinhole camera model
+
+pinhole camera:
+A pinhole camera is a simple camera without a lens but with a tiny aperture, a pinhole – effectively a light-proof box with a small hole in one side. Light from a scene passes through the aperture and projects an inverted image on the opposite side of the box, which is known as the camera obscura effect..
+
+pinhole camera model:
+The pinhole camera model describes the mathematical relationship between the coordinates of a 3D point and its projection onto the image plane of an ideal pinhole camera, where the camera aperture is described as a point and no lenses are used to focus light. The model does not include, for example, geometric distortions or blurring of unfocused objects caused by lenses and finite sized apertures. It also does not take into account that most practical cameras have only discrete image coordinates. This means that the pinhole camera model can only be used as a first order approximation of the mapping from a 3D scene to a 2D image. Its validity depends on the quality of the camera and, in general, decreases from the center of the image to the edges as lens distortion effects increase.
+
+Some of the effects that the pinhole camera model does not take into account can be compensated, for example by applying suitable coordinate transformations on the image coordinates; other effects are sufficiently small to be neglected if a high quality camera is used. This means that the pinhole camera model often can be used as a reasonable description of how a camera depicts a 3D scene, for example in computer vision and computer graphics.
+
+essential matrix:
+In computer vision, the essential matrix is a 3 × 3 matrix, E, with some additional properties described below, which relates corresponding points in stereo images assuming that the cameras satisfy the pinhole camera model.
+
+drift:
+perspective-n-point (PnP) probledem:
+errors, which accumulate over time. This effect is called the drift
+
+pnp problem:
+Perspective-n-Point is the problem of estimating the pose of a calibrated camera given a set of n 3D points in the world and their corresponding 2D projections in the image. The camera pose consists of 6 degrees-of-freedom (DOF) which are made up of the rotation (roll, pitch, and yaw) and 3D translation of the camera with respect to the world. This problem originates from camera calibration and has many applications in computer vision and other areas, including 3D pose estimation, robotics and augmented reality. A commonly used solution to the problem exists for n = 3 called P3P, and many solutions are available for the general case of n ≥ 3. Implementations of these solutions are also available in open source software
+
+bundle adjustment:
+Given a set of images depicting a number of 3D points from different viewpoints, bundle adjustment can be defined as the problem of simultaneously refining the 3D coordinates describing the scene geometry, the parameters of the relative motion, and the optical characteristics of the camera(s) employed to acquire the images, according to an optimality criterion involving the corresponding image projections of all points. 
+
+loop closure:
+Loop closure is the problem of recognizing a previously-visited location and updates the beliefs accordingly. This can be a problem because model or algorithm errors can assign low priors to the location. Typical loop closure methods apply a second algorithm to measure some type of sensor similarity, and re-set the location priors when a match is detected. For example, this can be done by storing and comparing bag of words vectors of SIFT features from each previously visited location.

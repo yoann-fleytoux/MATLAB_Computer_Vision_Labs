@@ -1,0 +1,55 @@
+%location /usr/local/MATLAB/R2016b/toolbox/images/imdata
+I = imread('cameraman.tif');
+imshow(I)
+%=rgb2gray(I);
+%figure;
+%imshow(I_G)
+% J = imnoise(I,'gaussian',0,0.1) 
+% figure
+% imshow(J)
+% J2 = imnoise(I,'gaussian',0,0.3) 
+% figure
+% imshow(J2)
+% J3 = imnoise(I,'gaussian',10,0.1) 
+% figure
+% imshow(J3)
+% J4 = imnoise(I,'gaussian',10,0.3) 
+% figure
+% imshow(J4)
+% J5 = imnoise(I,'salt & pepper',0.1)
+% figure
+% imshow(J5)
+% J6 = imnoise(I,'salt & pepper',0.5)
+% figure
+% imshow(J6)
+% J7 = imnoise(I,'speckle',0.8)
+% figure
+% imshow(J7)
+
+%Carry out the filtering of each image using the average filter, the Gaussian filter and the median filter.
+%This example shows how to filter an image with a 5-by-5 filter containing equal weights (often called an averaging filter) using imfilter.
+
+avg_filter = ones(5,5) / 25;
+F1=imfilter(I,avg_filter);
+figure
+imshow(F1)
+
+'average'	
+Averaging filter
+'disk'
+Circular averaging filter (pillbox)
+'gaussian'
+Gaussian lowpass filter
+'laplacian'	
+Approximates the two-dimensional Laplacian operator
+'log'
+Laplacian of Gaussian filter
+'motion'
+Approximates the linear motion of a camera
+'prewitt'
+	
+Prewitt horizontal edge-emphasizing filter
+
+'sobel'
+	
+Sobel horizontal edge-emphasizing filter
